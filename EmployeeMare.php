@@ -1,21 +1,19 @@
 <?php
 
 require_once 'ArticlesSport.php';
+require_once 'Vetrina.php';
+
 
 class EmployeeMare extends ArticlesSport {
     
-    public $vetrina=0 ;
+    public $immersioni_profonde ;
+    use Vetrina;
 
-    public function setVetrina($bol){
-        
-        if($bol = 0){
-            $this->vetrina = "top in vetrina";
-        } elseif ($bol = 1){
-            $this->vetrina = "bottom in vetrina";
-        }
-    }
+    public function setImmersioni_profonde($_immersioni_profonde){
+        $this->immersioni_profonde = $_immersioni_profonde;
+    }    
 
-    public function getVetrina(){
-        return $this->vetrina;
+    public function getImmersioni_profonde(){
+        return $this->immersioni_profonde;
     }
 }

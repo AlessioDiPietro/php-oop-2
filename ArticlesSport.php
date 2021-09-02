@@ -16,4 +16,5 @@ class ArticlesSport {
       return $this->name . "   " . $this->price . "&euro;";
   }
 
+
 }

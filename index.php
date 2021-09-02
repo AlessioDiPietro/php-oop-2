@@ -17,9 +17,12 @@ require_once 'EmployeeMare.php';
 $scarpini_calcio = new ArticlesSport('Scarpini da calcio', 35 ,2323234);
 
 $passamontagna = new EmployeeMontagna('Passamontagna', 14 , 33300222);
+$passamontagna->setAltaquota('2000 mt');
+$passamontagna->setVetrina_esp(0);
 
 $maschera_sub = new EmployeeMare('Maschera da sub', 22, 9993322);
-$maschera_sub->getVetrina(1);
+$maschera_sub->setImmersioni_profonde('120mt');
+$maschera_sub->setVetrina_esp(3);
 
 ?>
 
@@ -57,7 +60,8 @@ $maschera_sub->getVetrina(1);
                 <ul>
                     <li><?php echo $passamontagna->getDes() ?></li>
                     <li> <strong>Codice: </strong> #<?php echo $passamontagna->barcode ?></li>
-                    <li><h3>vetrina:</h3> <?php echo $passamontagna->getVetrina()?></li>
+                    <li><h3>vetrina:</h3><?php $passamontagna->getVetrina_esp()?></li>
+                    <li><h3>Altaquota fino a: <?php echo $passamontagna->getAltaquota()?></h3></li>
                 </ul>
             </li>
         </ul>
@@ -68,7 +72,8 @@ $maschera_sub->getVetrina(1);
                 <ul>
                     <li><?php echo $maschera_sub->getDes() ?></li>
                     <li> <strong>Codice: </strong> #<?php echo $maschera_sub->barcode ?></li>
-                    <li><h3>vetrina:<?php echo $maschera_sub->getVetrina()?></h3></li>
+                    <li><h3>vetrina:</h3><?php $maschera_sub->getVetrina_esp()?></li>
+                    <li><h3>immersioni fino a: <?php echo $maschera_sub->getImmersioni_profonde()?></h3></li>
                 </ul>
             </li>
         </ul>
